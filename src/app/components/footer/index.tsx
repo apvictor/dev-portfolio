@@ -6,10 +6,10 @@ export function Footer() {
       <span>Copyright © {year}</span>
       <a
         className="text-[#008D68]"
-        href="https://dev-armando.netlify.app"
+        href="https://devarmando.netlify.app"
         target="_blank"
       >
-        dev-armando.com.
+        devarmando.com.
       </a>
       <span>Todos os direitos reservados.</span>
     </footer>
