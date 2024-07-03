@@ -5,11 +5,12 @@ interface IProject {
   img: string;
   name: string;
   description: string;
+  link: string;
 }
-export function Item({ img, name, description }: IProject) {
+export function Item({ img, name, description, link }: IProject) {
   return (
     <Link
-      href=""
+      href={link}
       target="_blank"
       className="p-3 flex flex-col gap-5 bg-[#292C34] rounded-xl max-w-80 hover:scale-105 transition-all duration-300"
     >
