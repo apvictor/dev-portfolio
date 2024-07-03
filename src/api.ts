@@ -13,7 +13,7 @@ const user = {
     { name: "GitHub", img: "/tags/tag-github.svg" },
   ],
   projects: [
-    { name: "eGit", img: "/ebooks/eGIT.svg", link: "https://pay.hotmart.com/J94109618H", description: "Com este material, você terá tudo o que precisa para dominar o Git e o GitHub, mesmo que não saiba nada sobre o assunto!" },
+    { name: "eGit", img: "/ebooks/eGIT.svg", link: "https://pay.hotmart.com/J94109618H?off=hb1jma3k", description: "Com este material, você terá tudo o que precisa para dominar o Git e o GitHub, mesmo que não saiba nada sobre o assunto!" },
   ],
   socials: [
     { name: "Linkedin", img: "/linkedin.svg", link: "https://www.linkedin.com/in/armando-pereira19" },
