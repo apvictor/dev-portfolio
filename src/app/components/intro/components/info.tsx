@@ -1,7 +1,10 @@
+import { api } from "@/api";
 import { Avatar } from "./avatar";
 import { Tech } from "./tech";
 
 export function Info() {
+  const { user } = api;
+
   return (
     <div className="bg-[#16181D] flex flex-col items-center justify-center gap-16">
       <div className="flex flex-col items-center justify-center gap-10">
@@ -11,11 +14,11 @@ export function Info() {
           <div className="flex flex-col items-center gap-2">
             <span className="text-[#C0C4CE] text-xl font-inconsolata">
               Hello World! Meu nome é{" "}
-              <span className="text-[#008D68]">Armando Pereira</span> e sou
+              <span className="text-[#008D68]">{user.name}</span> e sou
             </span>
 
             <h1 className="text-5xl font-bold text-[#E2E4E9] font-asap">
-              Desenvolvedor Full Stack
+              {user.role}
             </h1>
           </div>
           <span className="text-[#878EA1] text-sm font-maven-pro">
@@ -28,15 +31,9 @@ export function Info() {
       </div>
 
       <div className="flex gap-4">
-        <Tech img="/tag-html.svg" name="HTML" />
-        <Tech img="/tag-css.svg" name="CSS" />
-        <Tech img="/tag-js.svg" name="Javascript" />
-        <Tech img="/tag-react.svg" name="React" />
-        <Tech img="/tag-node.svg" name="Node.js" />
-        <Tech img="/tag-php.svg" name="PHP" />
-        <Tech img="/tag-py.svg" name="Python" />
-        <Tech img="/tag-git.svg" name="Git" />
-        <Tech img="/tag-github.svg" name="GitHub" />
+        {user.techs.map((tech) => (
+          <Tech key={tech.name} {...tech} />
+        ))}
       </div>
     </div>
   );

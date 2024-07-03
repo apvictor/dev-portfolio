@@ -6,7 +6,7 @@ interface Props {
   link: string;
   name: string;
 }
-export function Contact({ img, link, name }: Props) {
+export function Item({ img, link, name }: Props) {
   return (
     <Link
       className="max-w-[400px] rounded-lg w-full flex items-center justify-between p-5 gap-3 bg-[#292C34] hover:bg-[#292C34]/60 hover:scale-105 transition-all duration-300"

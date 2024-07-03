@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Info } from "./info";
 import Image from "next/image";
+import { Info } from "./components/info";
 
 export function Intro() {
   return (

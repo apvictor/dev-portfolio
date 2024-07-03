@@ -6,7 +6,7 @@ import { Services } from "./components/services";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center bg-[#16181D] select-none">
+    <main className="flex flex-col items-center justify-center bg-[#16181D]">
         <Intro />
         <Projects />
         <Services />

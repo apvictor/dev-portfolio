@@ -1,6 +1,9 @@
-import { Contact } from "./contact";
+import { api } from "@/api";
+import { Item } from "./components/item";
 
 export function Contacts() {
+  const { user } = api;
+
   return (
     <section className="flex flex-col gap-12 w-screen px-32 py-32 bg-center bg-[url('/bg-contact.svg')] bg-cover">
       <div className="text-center flex flex-col gap-2">
@@ -14,29 +17,9 @@ export function Contacts() {
       </div>
 
       <div className="flex flex-col items-center gap-4">
-        <Contact
-          img="/linkedin.svg"
-          link="https://www.linkedin.com/in/armando-pereira19"
-          name="Linkedin"
-        />
-
-        <Contact
-          img="/instagram.svg"
-          link="https://www.instagram.com/dev.armando"
-          name="Instagram"
-        />
-
-        <Contact
-          img="/github.svg"
-          link="https://github.com/apvictor"
-          name="GitHub"
-        />
-
-        <Contact
-          img="/email.svg"
-          link="mailto:armando2019ti@gmail.com"
-          name="E-mail"
-        />
+        {user.socials.map((social) => (
+          <Item key={social.name} {...social} />
+        ))}
       </div>
     </section>
   );

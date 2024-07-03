@@ -1,6 +1,9 @@
-import { Project } from "./project";
+import { api } from "@/api";
+import { Item } from "./components/item";
 
 export function Projects() {
+  const { user } = api;
+
   return (
     <section
       id="projects"
@@ -16,37 +19,9 @@ export function Projects() {
       </div>
 
       <div className="grid grid-cols-3 gap-6">
-        <Project
-          img="/p1.svg"
-          title="Travelgram"
-          description="Rede social onde as pessoas mostram os registros de suas viagens
-              pelo mundo"
-        />
-        <Project
-          img="/p2.svg"
-          title="Tech News"
-          description="Homepage de um portal de notícias sobre a área de tecnologia"
-        />
-        <Project
-          img="/p3.svg"
-          title="Página de receita"
-          description="Página com o passo a passo de uma receita para cupcakes"
-        />
-        <Project
-          img="/p4.svg"
-          title="Zingen"
-          description="Landing Page completa e responsiva de um aplicativo de Karaokê"
-        />
-        <Project
-          img="/p5.svg"
-          title="Refund"
-          description="Um sistema para pedido e acompanhamento de reembolso"
-        />
-        <Project
-          img="/p6.svg"
-          title="Página de turismo"
-          description="ágina com as principais informações para quem quer viajar para Busan"
-        />
+        {user.projects.map((project) => (
+          <Item key={project.name} {...project} />
+        ))}
       </div>
     </section>
   );
